@@ -43,5 +43,20 @@ public class MainActivity extends AppCompatActivity {
                 resultTextView.setText(num1 + " - " + num2 + " = " + difference);
             }
         });
+
+        Button multiplyBtn = (Button) findViewById(R.id.multiplyBtn);
+        multiplyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText firstNumEditText = (EditText) findViewById(R.id.firstNumEditText);
+                EditText secondNumEditText = (EditText) findViewById(R.id.secondNumEditText);
+                TextView resultTextView = (TextView) findViewById(R.id.resultTextView);
+
+                int num1 = Integer.parseInt(firstNumEditText.getText().toString());
+                int num2 = Integer.parseInt(secondNumEditText.getText().toString());
+                int product = num1 * num2;
+                resultTextView.setText(num1 + " x " + num2 + " = " + product);
+            }
+        });
     }
 }
